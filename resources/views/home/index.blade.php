@@ -82,75 +82,90 @@
     <div class="clearfix"></div>
     <div class="search__area bg-light">
         <div class="container">
-            <div class="search__area-inner">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select name="area" class="wide select_option">
-                                <option value="" data-display="Area From">Area From </option>
-                                <option value="1500">1500</option>
-                                <option value="1200">1200</option>
-                                <option value="900">900</option>
-                                <option value="600">600</option>
-                                <option value="300">300</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select name="bed" class="wide select_option">
-                                <option value="" data-display="Bedrooms">Bedrooms</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select name="bath" class="wide select_option">
-                                <option value="" data-display="Bathrooms">Bathrooms</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-3">
-                        <div class="form-group">
-                            <select name="category" class="wide select_option">
-                                <option value="" data-display="All Category">All Category</option>
-                                @foreach ($category as $c)
-                                <option value="{{ $c->category }}">{{ ucfirst($c->category) }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6">
-                        <div class="form-group">
-                            <div class="filter__price">
-                                <input class="price-range" type="text" name="price" value="" />
+            <div class="search__area bg-light">
+                <div class="container">
+                    <div class="search__area-inner">
+                        <form action="/properties" autocomplete="off" method="get">
+                        <div class="row">
+                            <div class="col-6 col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <select name="area" class="wide select_option">
+                                        <option value="" data-display="Area From">Area From </option>
+                                        <option value="1500">1500</option>
+                                        <option value="1200">1200</option>
+                                        <option value="900">900</option>
+                                        <option value="600">600</option>
+                                        <option value="300">300</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <select name="bed" class="wide select_option">
+                                        <option value="" data-display="Bedrooms">Bedrooms</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <select name="bath" class="wide select_option">
+                                        <option value="" data-display="Bathrooms">Bathrooms</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-2 col-md-2">
+                                <div class="form-group">
+                                    <select name="category" class="wide select_option">
+                                        <option value="" data-display="All Category">All Category</option>
+                                        @foreach ($category as $c)
+                                        <option value="{{ $c->category }}">{{ ucfirst($c->category) }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            {{-- <div class="col-12 col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <div class="filter__price">
+                                        <input class="price-range" type="text" name="price" value="" />
+                                    </div>
+                                </div>
+                            </div> --}}
+                            {{-- <div class="col-6 col-lg-3 col-md-3">
+                                <div class="form-group">
+                                    <input type="number" name="price1" placeholder="Min Price ($)">
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-3 col-md-3">
+                                <div class="form-group">
+                                    <input type="number" name="price2" placeholder="Max Price ($)">
+                                </div>
+                            </div> --}}
+                            <div class="col-12 col-lg-4 col-md-4">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary text-uppercase btn-block"> search <i
+                                            class="fa fa-search ml-1"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6 col-md-6">
-                        <div class="form-group">
-                            <button class="btn btn-primary text-uppercase btn-block"> search <i
-                                    class="fa fa-search ml-1"></i></button>
-                        </div>
+                    </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

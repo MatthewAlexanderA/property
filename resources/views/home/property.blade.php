@@ -32,8 +32,9 @@
         <div class="search__area bg-light">
             <div class="container">
                 <div class="search__area-inner">
+                    <form action="{{ url()->current() }}" autocomplete="off" method="get">
                     <div class="row">
-                        <div class="col-6 col-lg-3 col-md-3">
+                        <div class="col-6 col-lg-2 col-md-2">
                             <div class="form-group">
                                 <select name="area" class="wide select_option">
                                     <option value="" data-display="Area From">Area From </option>
@@ -46,7 +47,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3">
+                        <div class="col-6 col-lg-2 col-md-2">
                             <div class="form-group">
                                 <select name="bed" class="wide select_option">
                                     <option value="" data-display="Bedrooms">Bedrooms</option>
@@ -62,7 +63,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3">
+                        <div class="col-6 col-lg-2 col-md-2">
                             <div class="form-group">
                                 <select name="bath" class="wide select_option">
                                     <option value="" data-display="Bathrooms">Bathrooms</option>
@@ -75,7 +76,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-3 col-md-3">
+                        <div class="col-6 col-lg-2 col-md-2">
                             <div class="form-group">
                                 <select name="category" class="wide select_option">
                                     <option value="" data-display="All Category">All Category</option>
@@ -85,21 +86,31 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-6 col-md-6">
+                        {{-- <div class="col-12 col-lg-6 col-md-6">
                             <div class="form-group">
                                 <div class="filter__price">
                                     <input class="price-range" type="text" name="price" value="" />
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-lg-6 col-md-6">
+                        </div> --}}
+                        {{-- <div class="col-6 col-lg-3 col-md-3">
                             <div class="form-group">
-                                <button class="btn btn-primary text-uppercase btn-block"> search <i
+                                <input type="number" name="price1" placeholder="Min Price ($)">
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-3">
+                            <div class="form-group">
+                                <input type="number" name="price2" placeholder="Max Price ($)">
+                            </div>
+                        </div> --}}
+                        <div class="col-12 col-lg-4 col-md-4">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary text-uppercase btn-block"> search <i
                                         class="fa fa-search ml-1"></i></button>
                             </div>
                         </div>
                     </div>
-    
+                </form>
                 </div>
             </div>
         </div>

@@ -11,11 +11,17 @@ class EmailController extends Controller
 {
     public function index(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'desc' => 'required',
-        ]);
+        $request->validate(
+            [
+                'name' => 'required',
+                'email' => 'required',
+                'desc' => 'required',
+                'g-recaptcha-response' => 'required|captcha',
+            ],
+            [
+                'g-recaptcha-response.required' => 'Please verify that you are not a robot.'
+            ]
+        );
 
         // $link = 'https://wa.me/' . $request->wa . '?text=Name:%20' . $request->name . '%0AEmail:%20' . $request->email . '%0ABooking%20Date:%20' . $request->date . '%0ADescription:%20' . $request->desc;
 

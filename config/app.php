@@ -200,6 +200,8 @@ return [
         */
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+
     ],
 
     /*
@@ -217,6 +219,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
 
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
 
     ])->toArray(),
 

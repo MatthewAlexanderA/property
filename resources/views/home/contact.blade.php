@@ -31,6 +31,16 @@
 <!-- Form contact -->
 <section class="wrap__contact-form">
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-8">
                 <h5>contact us</h5>
@@ -63,6 +73,12 @@
                     <div class="form-group">
                         <div class="input-group">
                             <textarea name="desc" rows="4" class="form-control" required placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {!! NoCaptcha::renderJs('en', false, 'onloadCallback') !!}
+                            {!! NoCaptcha::display() !!}
                         </div>
                     </div>
                         <div class="form-group float-right mb-0">
