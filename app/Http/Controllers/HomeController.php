@@ -22,9 +22,9 @@ class HomeController extends Controller
     {
         $slider = Slider::all();
         $about = About::all();
-        $property = Property::latest()->limit(8)->get();
+        $property = Property::latest()->limit(9)->get();
         $testimonial = Testimonial::latest()->get();
-        $blog = Blog::latest()->limit(9)->get();
+        $blog = Blog::latest()->limit(3)->get();
         $config = Config::all();
         $category = Category::all();
 

@@ -34,6 +34,6 @@ class SendMail extends Mailable
         //     $message->to('matthewalexander.wan@gmail.com', 'SAMA BeautyStudio')
         //         ->subject('Booking SAMA BeautyStudio');
         // });
-        return $this->from('matthewalexander.wan@gmail.com')->subject('Booking SAMA BeautyStudio')->view('email')->with('data', $this->data);
+        return $this->from('matthewalexander.wan@gmail.com')->subject('Property-Project')->view('email')->with('data', $this->data);
     }
 }

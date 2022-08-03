@@ -17,6 +17,10 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TestimonialController;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutsController;
+use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\EmailController;
 
@@ -32,6 +36,10 @@ use App\Http\Controllers\EmailController;
 */
 
 Route::resource('/', HomeController::class);
+Route::resource('/abouts', AboutsController::class);
+Route::resource('/properties', PropertiesController::class);
+Route::resource('/blogs', BlogsController::class);
+Route::resource('/contact', ContactController::class);
 
 Route::get('/email', [EmailController::class, 'index']);
 

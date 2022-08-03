@@ -34,6 +34,8 @@
     }
 </style>
 
+    <link rel="shortcut icon" href="#">
+
 {{-- <link rel="shortcut icon" href="{{{ asset('storage/post-images/favicon.ico') }}}"> --}}
 
 </head>

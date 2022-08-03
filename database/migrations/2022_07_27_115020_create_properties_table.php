@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('side_image2')->nullable();
             $table->string('side_image3')->nullable();
             $table->string('side_image4')->nullable();
-            $table->string('content');
+            $table->longText('content');
             $table->timestamps();
         });
     }

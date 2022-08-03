@@ -14,7 +14,6 @@ class EmailController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'date' => 'required',
             'desc' => 'required',
         ]);
 
@@ -23,7 +22,6 @@ class EmailController extends Controller
         $data = [
             'name' => $request->name,
             'email' => $request->email,
-            'date' => $request->date,
             'desc' => $request->desc,
         ];
 
