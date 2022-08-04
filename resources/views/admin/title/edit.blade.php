@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title')
+@section('page')
 active
 @endsection
 @section('title')
@@ -135,6 +135,41 @@ Page Title
                                 <strong>Footer Button Text</strong>
                                 <input type="text" name="footer_button" class="form-control" @error('footer_button') is-invalid @enderror placeholder="Footer Button Text" value="{{$title[0]->footer_button}}">
                                 @error('footer_button')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Footer Nav Text</strong>
+                                <input type="text" name="footer_nav" class="form-control" @error('footer_nav') is-invalid @enderror placeholder="Footer Nav Text" value="{{$title[0]->footer_nav}}">
+                                @error('footer_nav')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Social Media Title</strong>
+                                <input type="text" name="contact_title" class="form-control" @error('contact_title') is-invalid @enderror placeholder="Social Media Title" value="{{$title[0]->contact_title}}">
+                                @error('contact_title')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Social Media Description</strong>
+                                <input type="text" name="contact_desc" class="form-control" @error('contact_desc') is-invalid @enderror placeholder="Social Media Description" value="{{$title[0]->contact_desc}}">
+                                @error('contact_desc')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

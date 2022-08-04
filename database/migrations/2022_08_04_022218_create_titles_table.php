@@ -24,6 +24,9 @@ return new class extends Migration
             $table->string('footer_title');
             $table->string('footer_desc');
             $table->string('footer_button');
+            $table->string('footer_nav');
+            $table->string('contact_title');
+            $table->string('contact_desc');
             $table->timestamps();
         });
     }

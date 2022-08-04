@@ -95,7 +95,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/title" class="nav-link @yield('title')">
+            <a href="/title" class="nav-link @yield('page')">
               <i class="fa-solid fa-a"></i>
               <p>Page Title</p>
             </a>

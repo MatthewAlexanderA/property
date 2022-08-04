@@ -167,7 +167,7 @@
                     <!-- QUICK LINKS -->
                     <div class="col-md-4">
                         <div class="widget__footer">
-                            <h4 class="footer-title">Quick Links</h4>
+                            <h4 class="footer-title">{{ $title[0]->footer_nav }}</h4>
                             <div class="link__category-two-column">
                                 <ul class="list-unstyled ">
                                     <li class="list-inline-item">
@@ -195,9 +195,9 @@
                     <!-- NEWSLETTERS -->
                     <div class="col-md-4">
                         <div class="widget__footer">
-                            <h4 class="footer-title">follow us </h4>
+                            <h4 class="footer-title">{{ $title[0]->contact_title }} </h4>
                             <p class="mb-2">
-                                Follow us and stay in touch to get the latest news
+                                {{ $title[0]->contact_desc }}
                             </p>
                             <p>
                                 <a target="_blank" href="{{ $config[0]->fb }}"><button class="btn btn-social btn-social-o facebook mr-1">

@@ -49,6 +49,9 @@ class TitleController extends Controller
             'footer_title' => 'required',
             'footer_desc' => 'required',
             'footer_button' => 'required',
+            'footer_nav' => 'required',
+            'contact_title' => 'required',
+            'contact_desc' => 'required',
         ];
 
         $validated = $request->validate($rules);
