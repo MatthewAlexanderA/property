@@ -95,6 +95,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/title" class="nav-link @yield('title')">
+              <i class="fa-solid fa-a"></i>
+              <p>Page Title</p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="about" class="nav-link @yield('about')">
                 <i class="fa-solid fa-address-card"></i>
               <p>Tentang Kami</p>

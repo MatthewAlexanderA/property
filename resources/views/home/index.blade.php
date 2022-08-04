@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="area" class="wide select_option">
+                                    <select name="area" class="wide select_option" required>
                                         <option value="" data-display="Area From">Area From </option>
                                         <option value="1500">1500</option>
                                         <option value="1200">1200</option>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="bed" class="wide select_option">
+                                    <select name="bed" class="wide select_option" required>
                                         <option value="" data-display="Bedrooms">Bedrooms</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -118,7 +118,7 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="bath" class="wide select_option">
+                                    <select name="bath" class="wide select_option" required>
                                         <option value="" data-display="Bathrooms">Bathrooms</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="category" class="wide select_option">
+                                    <select name="category" class="wide select_option" required>
                                         <option value="" data-display="All Category">All Category</option>
                                         @foreach ($category as $c)
                                         <option value="{{ $c->category }}">{{ ucfirst($c->category) }}</option>
@@ -176,9 +176,9 @@
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="title__head">
                         <h2 class="text-center text-capitalize">
-                            featured properties
+                            {{ $title[0]->property_title }}
                         </h2>
-                        <p class="text-center text-capitalize">handpicked exclusive properties by our team.</p>
+                        <p class="text-center text-capitalize">{{ $title[0]->property_desc }}</p>
 
                     </div>
                 </div>
@@ -277,9 +277,9 @@
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="title__head">
                         <h2 class="text-center text-capitalize">
-                            what people says
+                            {{ $title[0]->testimonial_title }}
                         </h2>
-                        <p class="text-center text-capitalize">people says about our property.</p>
+                        <p class="text-center text-capitalize">{{ $title[0]->testimonial_desc }}</p>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -320,10 +320,9 @@
                 <div class="col-md-8 col-lg-6 mx-auto">
                     <div class="title__head">
                         <h2 class="text-center text-capitalize">
-                            lastest news
+                            {{ $title[0]->blog_title }}
                         </h2>
-                        <p class="text-center text-capitalize">Find Of The Most Popular Property All Around
-                            Indonesia.</p>
+                        <p class="text-center text-capitalize">{{ $title[0]->blog_desc }}</p>
                     </div>
                 </div>
                 <div class="clearfix"></div>

@@ -129,15 +129,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-9">
-                    <h2 class="text-uppercase text-white">Looking To Sell Or Rent Your Property?</h2>
-                    <p class="text-capitalize text-white">We Will Assist You In The Best And Comfortable Property
-                        Services
-                        For You
+                    <h2 class="text-uppercase text-white">{{ $title[0]->footer_title }}</h2>
+                    <p class="text-capitalize text-white">{{ $title[0]->footer_desc }}
                     </p>
 
                 </div>
                 <div class="col-lg-3">
-                    <a  target="_blank" href="https://wa.me/{{ $config[0]->wa }}" class="btn btn-light text-uppercase ">Contact Us
+                    <a  target="_blank" href="https://wa.me/{{ $config[0]->wa }}" class="btn btn-light text-uppercase ">{{ $title[0]->footer_button }}
                         <i class="fa fa-angle-right ml-3 arrow-btn "></i></a>
                 </div>
             </div>

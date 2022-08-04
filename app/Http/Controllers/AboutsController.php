@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Testimonial;
 use App\Models\Blog;
+use App\Models\Title;
 use App\Models\Config;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class AboutsController extends Controller
         $testimonial = Testimonial::latest()->get();
         $blog = Blog::latest()->limit(3)->get();
         $config = Config::all();
+        $title = Title::all();
 
-        return view('home.about', compact('about', 'testimonial', 'blog', 'config',));
+        return view('home.about', compact('about', 'testimonial', 'blog', 'config', 'title'));
     }
 }

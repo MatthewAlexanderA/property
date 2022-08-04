@@ -8,6 +8,7 @@ use App\Models\Property;
 use App\Models\Testimonial;
 use App\Models\Blog;
 use App\Models\Config;
+use App\Models\Title;
 use App\Models\Category;
 
 use App\Models\Visitor;
@@ -22,11 +23,12 @@ class HomeController extends Controller
     {
         $slider = Slider::all();
         $about = About::all();
-        $property = Property::latest()->limit(9)->get();
+        $property = Property::latest()->limit(6)->get();
         $testimonial = Testimonial::latest()->get();
         $blog = Blog::latest()->limit(3)->get();
         $config = Config::all();
         $category = Category::all();
+        $title = Title::all();
 
         $ip_now = $_SERVER['REMOTE_ADDR'];
 
@@ -37,6 +39,6 @@ class HomeController extends Controller
 
         Visitor::create($validated);
 
-        return view('home.index', compact('slider', 'about', 'property', 'testimonial', 'blog', 'config', 'category'));
+        return view('home.index', compact('slider', 'about', 'property', 'testimonial', 'blog', 'config', 'category', 'title'));
     }
 }

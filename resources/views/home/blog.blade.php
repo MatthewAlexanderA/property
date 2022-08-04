@@ -34,10 +34,9 @@
             <div class="col-md-8 col-lg-6 mx-auto">
                 <div class="title__head">
                     <h2 class="text-center text-capitalize">
-                        lastest news
+                        {{ $title[0]->blog_title }}
                     </h2>
-                    <p class="text-center text-capitalize">Find Of The Most Popular Property All Around
-                        Indonesia.</p>
+                    <p class="text-center text-capitalize">{{ $title[0]->blog_desc }}</p>
                 </div>
             </div>
             <div class="clearfix"></div>

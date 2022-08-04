@@ -67,9 +67,9 @@
             <div class="col-md-8 col-lg-6 mx-auto">
                 <div class="title__head">
                     <h2 class="text-center text-capitalize">
-                        what people says
+                        {{ $title[0]->testimonial_title }}
                     </h2>
-                    <p class="text-center text-capitalize">people says about our property.</p>
+                    <p class="text-center text-capitalize">{{ $title[0]->testimonial_desc }}</p>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -110,10 +110,9 @@
             <div class="col-md-8 col-lg-6 mx-auto">
                 <div class="title__head">
                     <h2 class="text-center text-capitalize">
-                        lastest news
+                        {{ $title[0]->blog_title }}
                     </h2>
-                    <p class="text-center text-capitalize">Find Of The Most Popular Real Estate Company All Around
-                        Indonesia.</p>
+                    <p class="text-center text-capitalize">{{ $title[0]->blog_desc }}</p>
                 </div>
             </div>
             <div class="clearfix"></div>

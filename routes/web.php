@@ -15,6 +15,7 @@ use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\TitleController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutsController;
@@ -57,6 +58,7 @@ Route::resource('config', ConfigController::class)->middleware('auth');
 Route::resource('property', PropertyController::class)->middleware('auth');
 Route::resource('slider', SliderController::class)->middleware('auth');
 Route::resource('testimonial', TestimonialController::class)->middleware('auth');
+Route::resource('title', TitleController::class)->middleware('auth');
 
 Route::delete('/selected-slider', [SliderController::class, 'deleteCheckedSlider'])->name('slider.deleteSelected');
 Route::delete('/selected-property', [PropertyController::class, 'deleteCheckedProperty'])->name('property.deleteSelected');
