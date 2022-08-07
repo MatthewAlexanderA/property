@@ -57,8 +57,10 @@ Edit Blog
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Content</strong>
-                                <input id="contents" type="hidden" name="content" class="form-control" value="{{$blog->content}}">
-                                <trix-editor input="contents"></trix-editor>
+                                <textarea name="content" id="contents" cols="30" rows="10">{{ $blog->content }}</textarea>
+                                <script>
+                                    CKEDITOR.replace('contents');
+                                </script>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">

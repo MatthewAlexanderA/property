@@ -54,7 +54,7 @@
                         </ul>
                     </div>
                     <div class="dlab-post-media dlab-img-effect zoom-slow m-t20 text-center">
-                        <img src="{{ asset('storage/' . $blog->image) }}" alt="No-Image">
+                        <img src="{{ asset('storage/' . $blog->image) }}" alt="No-Image" class="img-fluid">
                     </div>
                     <p>
                         {!! $blog->content !!}

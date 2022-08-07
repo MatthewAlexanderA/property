@@ -49,7 +49,6 @@ Testimonial
                     <th><input type="checkbox" id="chkCheckAll" /></th>
                       <th>Name</th>
                       <th>Profession</th>
-                      <th>Comment</th>
                       <th>Image</th>
                       <th>Action</th>
                   </tr>
@@ -60,7 +59,6 @@ Testimonial
                   <td><input type="checkbox" name="ids" class="checkBoxClass" value="{{ $t->id }}" /></td>
                   <td>{{ $t->name }}</td>
                   <td>{{ $t->profession }}</td>
-                  <td><?php echo $t->content ?></td>
                   <td>
                       <div style="width: 200px;">
                           <img src="{{ asset('storage/' . $t->image) }}" alt="No Image" class="img-fluid mt-3">
@@ -86,7 +84,6 @@ Testimonial
                     <th></th>
                       <th>Name</th>
                       <th>Profession</th>
-                      <th>Comment</th>
                       <th>Image</th>
                       <th>Action</th>
                   </tr>
@@ -165,8 +162,10 @@ Testimonial
                       <div class="col-xs-12 col-sm-12 col-md-12">
                           <div class="form-group">
                               <strong>Comment</strong>
-                              <input id="contents" type="hidden" name="content" class="form-control" value="{{ old('content') }}">
-                              <trix-editor input="contents" value="{{ old('content') }}"></trix-editor>
+                              <textarea name="content" id="contents" cols="30" rows="10"></textarea>
+                                <script>
+                                    CKEDITOR.replace('contents');
+                                </script>
                           </div>
                       </div>
                       <div class="col-xs-12 col-sm-12 col-md-12">

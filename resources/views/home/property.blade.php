@@ -1,4 +1,7 @@
 @extends('home.layout')
+@php
+    use App\Models\Category;
+@endphp
 
 @section('content')
     
@@ -133,7 +136,12 @@
                                 <div class="info"> for sale</div>
                             </div>
                             <div class="card__image-body">
-                                <span class="badge badge-primary text-capitalize mb-2">{{ $p->category }}</span>
+                                @php
+                                    $cate = Category::where('id', $p->category)->get();
+                                @endphp
+                                @foreach ($cate as $ct)
+                                    <span class="badge badge-primary text-capitalize mb-2">{{ $ct->category }}</span>
+                                @endforeach
                                 <h6 class="text-capitalize">
                                     {{ $p->name }}
                                 </h6>

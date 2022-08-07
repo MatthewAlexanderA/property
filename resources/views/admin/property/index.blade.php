@@ -1,4 +1,7 @@
 @extends('admin.layout')
+@php
+    use App\Models\Category;
+@endphp
 
 @section('menu')
 active
@@ -64,7 +67,12 @@ Property
                         <img src="{{ asset('storage/' . $p->image) }}" alt="No Image" class="img-fluid mt-3">
                     </div>
                   </td>
-                  <td>{{ $p->category }}</td>
+                  @php
+                      $cate = Category::where('id', $p->category)->get();
+                  @endphp
+                  @foreach ($cate as $ct)
+                    <td>{{ $ct->category }}</td>
+                  @endforeach
                   <td>{{ $p->name }}</td>
                   <td>{{ $p->location }}</td>
                   <td>${{ number_format($p->price) }}</td>
@@ -162,7 +170,7 @@ Property
                               <strong>Category</strong>
                               <select class="form-control" name="category">
                                   @foreach($category as $c)
-                                      <option value="{{$c->category}}">{{$c->category}}</option>
+                                      <option value="{{$c->id}}">{{$c->category}}</option>
                                   @endforeach
                               </select>
                           </div>
@@ -303,8 +311,10 @@ Property
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Content</strong>
-                <input id="contents" type="hidden" name="content" class="form-control" value="{{ old('content') }}">
-                <trix-editor input="contents"></trix-editor>
+                <textarea name="content" id="contents" cols="30" rows="10"></textarea>
+                  <script>
+                      CKEDITOR.replace('contents');
+                  </script>
             </div>
         </div>
           <div class="col-xs-12 col-sm-12 col-md-12 text-center">

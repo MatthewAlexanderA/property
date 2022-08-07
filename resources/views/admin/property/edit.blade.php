@@ -67,7 +67,7 @@ Edit Property
                                 <strong>Category</strong>
                                 <select class="form-control" name="category">
                                     @foreach($category as $c)
-                                        <option value="{{$c->category}}" @if($property->category == $c->category)selected @endif>{{$c->category}}</option>
+                                        <option value="{{$c->id}}" @if($property->category == $c->id)selected @endif>{{$c->category}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -228,8 +228,10 @@ Edit Property
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Content</strong>
-                                <input id="contents" type="hidden" name="content" class="form-control" value="{{$property->content}}">
-                                <trix-editor input="contents"></trix-editor>
+                                <textarea name="content" id="contents" cols="30" rows="10">{{ $property->content }}</textarea>
+                                <script>
+                                    CKEDITOR.replace('contents');
+                                </script>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

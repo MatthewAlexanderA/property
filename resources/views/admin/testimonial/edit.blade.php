@@ -68,8 +68,10 @@ Edit Testimonial
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Comment</strong>
-                                <input id="contents" type="hidden" name="content" class="form-control" value="{{$testimonial->content}}">
-                                <trix-editor input="contents"></trix-editor>
+                                <textarea name="content" id="contents" cols="30" rows="10">{{ $testimonial->content }}</textarea>
+                                <script>
+                                    CKEDITOR.replace('contents');
+                                </script>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">

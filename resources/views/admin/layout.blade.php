@@ -25,8 +25,11 @@
 <script src="https://kit.fontawesome.com/67b6ece322.js" crossorigin="anonymous"></script>
 
 <!-- Trix Editor -->
-<link rel="stylesheet" type="text/css" href="/css/trix.css">
-<script type="text/javascript" src="/js/trix.js"></script>
+{{-- <link rel="stylesheet" type="text/css" href="/css/trix.css">
+<script type="text/javascript" src="/js/trix.js"></script> --}}
+
+<!-- CKeditor -->
+<script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 
 <style>
     trix-toolbar [data-trix-button-group="file-tools"]{

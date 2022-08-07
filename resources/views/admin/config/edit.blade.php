@@ -91,8 +91,10 @@ Config
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Metadata</strong>
-                                <input id="metadatas" type="hidden" name="metadata" class="form-control" value="{{$config[0]->metadata}}">
-                                <trix-editor input="metadatas"></trix-editor>
+                                <textarea name="metadata" id="contents" cols="30" rows="10">{{ $config[0]->metadata }}</textarea>
+                                <script>
+                                    CKEDITOR.replace('contents');
+                                </script>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">

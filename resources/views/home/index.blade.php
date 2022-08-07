@@ -1,4 +1,7 @@
 @extends('home.layout')
+@php
+    use App\Models\Category;
+@endphp
 
 @section('content')
     
@@ -192,7 +195,7 @@
                     <ul class="list-inline filterizr-filter">
                         <li class="list-inline-item filtr-active btn-filter" data-filter="all">All Property</li>
                         @foreach ($category as $c)
-                            <li class="list-inline-item btn-filter" data-filter="{{ $c->category }}">{{ ucfirst($c->category) }}</li>
+                            <li class="list-inline-item btn-filter" data-filter="{{ $c->id }}">{{ ucfirst($c->category) }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -210,7 +213,12 @@
                                     <div class="info"> for sale</div>
                                 </div>
                                 <div class="card__image-body">
-                                    <span class="badge badge-primary text-capitalize mb-2">{{ $p->category }}</span>
+                                    @php
+                                        $cate = Category::where('id', $p->category)->get();
+                                    @endphp
+                                    @foreach ($cate as $ct)
+                                        <span class="badge badge-primary text-capitalize mb-2">{{ $ct->category }}</span>
+                                    @endforeach
                                     <h6 class="text-capitalize">
                                         {{ $p->name }}
                                     </h6>

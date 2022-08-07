@@ -67,7 +67,7 @@
     <!-- END NAVBAR TOP -->
     <nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('storage/' . $config[0]->logo) }}" alt="No-Image" class="img-fluid">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav99">

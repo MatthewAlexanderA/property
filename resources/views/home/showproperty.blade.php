@@ -62,51 +62,38 @@
                     <img src="{{  asset('storage/' . $property->image) }}" alt="No-Image" class="img-fluid">
                 </a>
             </div>
+            @if($property->side_image1)
             <div class="item">
                 <a href="#">
-                    <img src="
-                    @if($property->side_image1)
-                        {{  asset('storage/' . $property->side_image1) }}
-                    @else
-                        {{  asset('storage/' . $property->image) }}
-                    @endif
-                    " alt="No-Image" class="img-fluid">
+                    <img src="{{  asset('storage/' . $property->side_image1) }}" alt="No-Image" class="img-fluid">
                 </a>
             </div>
+            @else
+            @endif
+            @if($property->side_image2)
             <div class="item">
                 <a href="#">
-                    <img src="
-                    @if($property->side_image2)
-                        {{  asset('storage/' . $property->side_image2) }}
-                    @else
-                        {{  asset('storage/' . $property->image) }}
-                    @endif
-                    " alt="No-Image" class="img-fluid">
+                    <img src="{{  asset('storage/' . $property->side_image2) }}" alt="No-Image" class="img-fluid">
                 </a>
             </div>
+            @else
+            @endif
+            @if($property->side_image3)
             <div class="item">
                 <a href="#">
-                    <img src="
-                    @if($property->side_image3)
-                        {{  asset('storage/' . $property->side_image3) }}
-                    @else
-                        {{  asset('storage/' . $property->image) }}
-                    @endif
-                    " alt="No-Image" class="img-fluid">
+                    <img src="{{  asset('storage/' . $property->side_image3) }}" alt="No-Image" class="img-fluid">
                 </a>
             </div>
+            @else
+            @endif
+            @if($property->side_image4)
             <div class="item">
                 <a href="#">
-                    <img src="
-                    @if($property->side_image4)
-                        {{  asset('storage/' . $property->side_image4) }}
-                    @else
-                        {{  asset('storage/' . $property->image) }}
-                    @endif
-                    " alt="No-Image" class="img-fluid">
+                    <img src="{{  asset('storage/' . $property->side_image4) }}" alt="No-Image" class="img-fluid">
                 </a>
             </div>
-
+            @else
+            @endif
 
         </div>
 
