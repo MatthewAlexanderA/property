@@ -85,6 +85,12 @@
     <div class="clearfix"></div>
     <div class="search__area bg-light">
         <div class="container">
+            @if(Session::has('successMsg'))
+                <div class="alert alert-danger"> {{ Session::get('successMsg') }}</div>
+                @php
+                    Session::forget('successMsg');
+                @endphp
+            @endif
             <div class="search__area bg-light">
                 <div class="container">
                     <div class="search__area-inner">
@@ -92,7 +98,7 @@
                         <div class="row">
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="area" class="wide select_option" required>
+                                    <select name="area" class="wide select_option" >
                                         <option value="" data-display="Area From">Area From </option>
                                         <option value="1500">1500</option>
                                         <option value="1200">1200</option>
@@ -105,7 +111,7 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="bed" class="wide select_option" required>
+                                    <select name="bed" class="wide select_option" >
                                         <option value="" data-display="Bedrooms">Bedrooms</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -121,7 +127,7 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="bath" class="wide select_option" required>
+                                    <select name="bath" class="wide select_option" >
                                         <option value="" data-display="Bathrooms">Bathrooms</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -134,10 +140,10 @@
                             </div>
                             <div class="col-6 col-lg-2 col-md-2">
                                 <div class="form-group">
-                                    <select name="category" class="wide select_option" required>
+                                    <select name="category" class="wide select_option" >
                                         <option value="" data-display="All Category">All Category</option>
                                         @foreach ($category as $c)
-                                        <option value="{{ $c->category }}">{{ ucfirst($c->category) }}</option>
+                                        <option value="{{ $c->id }}">{{ ucfirst($c->category) }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -205,7 +211,7 @@
                         @foreach ($property as $p)
                         <div class="col-md-6 col-lg-4 filtr-item" data-category="{{ $p->category }}" data-title="">
 
-                            <a href="{{ route('properties.show', $p->id) }}">
+                            <a href="{{ route('properties.show', $p->name) }}">
                             <div class="card__image card__box-v1">
                                 <div class="card__image-header h-250">
                                     <div class="ribbon text-capitalize">featured</div>
@@ -340,7 +346,7 @@
                 <div class="col-md-4">
                     <!-- BLOG  -->
                     <div class="card__image">
-                        <a href="{{ route('blogs.show', $b->id) }}">
+                        <a href="{{ route('blogs.show', $b->title) }}">
                             <div class="card__image-header h-250">
                             <img src="{{ asset('storage/' . $b->image) }}" alt="" class="img-fluid w100 img-transition">
                             {{-- <div class="info"> event</div> --}}
@@ -349,7 +355,7 @@
                         <div class="card__image-body">
                             <!-- <span class="badge badge-secondary p-1 text-capitalize mb-3">May 08, 2019 </span> -->
                             <h6 class="text-capitalize">
-                                <a href="{{ route('blogs.show', $b->id) }}">{{ $b->title }} </a>
+                                <a href="{{ route('blogs.show', $b->title) }}">{{ $b->title }} </a>
                             </h6>
 
                         </div>
@@ -359,7 +365,7 @@
                             </ul>
                             <ul class="list-inline my-auto ml-auto">
                                 <li class="list-inline-item ">
-                                    <a href="{{ route('blogs.show', $b->id) }}" class="btn btn-sm btn-primary "><small
+                                    <a href="{{ route('blogs.show', $b->title) }}" class="btn btn-sm btn-primary "><small
                                             class="text-white ">read more <i
                                                 class="fa fa-angle-right ml-1"></i></small></a>
                                 </li>

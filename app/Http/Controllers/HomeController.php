@@ -41,4 +41,43 @@ class HomeController extends Controller
 
         return view('home.index', compact('slider', 'about', 'property', 'testimonial', 'blog', 'config', 'category', 'title'));
     }
+
+    // public function filter(Request $request)
+    // {
+    //     if (!empty($request->area) && !empty($request->bed) && !empty($request->bath) && !empty($request->category)) {
+    //         $property = Property::latest()->get();
+    //         $config = Config::all();
+    //         $category = Category::all();
+    //         $title = Title::all();
+    //         $property = Property::select('*')
+    //             ->where('area', '<', $request->area)
+    //             ->where('bed', '=', $request->bed)
+    //             ->where('bath', '=', $request->bath)
+    //             ->where('category', '=', $request->category)
+    //             ->get();
+    //         return view('home.property', compact('property', 'config', 'category', 'title'));
+    //     } elseif (empty($request->area) && empty($request->bed) && empty($request->bath) && empty($request->category)) {
+    //         $slider = Slider::all();
+    //         $about = About::all();
+    //         $property = Property::latest()->limit(6)->get();
+    //         $testimonial = Testimonial::latest()->get();
+    //         $blog = Blog::latest()->limit(3)->get();
+    //         $config = Config::all();
+    //         $category = Category::all();
+    //         $title = Title::all();
+    //         $request->session()->flash('successMsg', 'Please Fill All Filter');
+    //         return view('home.index', compact('slider', 'about', 'property', 'testimonial', 'blog', 'config', 'category', 'title'));
+    //     } elseif ($request->area || $request->bed || $request->bath || $request->category) {
+    //         $slider = Slider::all();
+    //         $about = About::all();
+    //         $property = Property::latest()->limit(6)->get();
+    //         $testimonial = Testimonial::latest()->get();
+    //         $blog = Blog::latest()->limit(3)->get();
+    //         $config = Config::all();
+    //         $category = Category::all();
+    //         $title = Title::all();
+    //         $request->session()->flash('successMsg', 'Please Fill All Filter');
+    //         return view('home.index', compact('slider', 'about', 'property', 'testimonial', 'blog', 'config', 'category', 'title'));
+    //     }
+    // }
 }

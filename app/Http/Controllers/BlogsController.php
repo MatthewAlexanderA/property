@@ -27,7 +27,7 @@ class BlogsController extends Controller
 
     public function show($id)
     {
-        $blog = Blog::find($id);
+        $blog = Blog::where('title', $id)->first();
         $config = Config::all();
         $title = Title::all();
 

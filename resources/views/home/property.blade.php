@@ -32,6 +32,12 @@
 
 <section>
     <div class="container">
+        @if(Session::has('successMsg'))
+            <div class="alert alert-danger"> {{ Session::get('successMsg') }}</div>
+            @php
+                Session::forget('successMsg');
+            @endphp
+        @endif
         <div class="search__area bg-light">
             <div class="container">
                 <div class="search__area-inner">
@@ -84,7 +90,7 @@
                                 <select name="category" class="wide select_option">
                                     <option value="" data-display="All Category">All Category</option>
                                     @foreach ($category as $c)
-                                    <option value="{{ $c->category }}">{{ ucfirst($c->category) }}</option>
+                                    <option value="{{ $c->id }}">{{ ucfirst($c->category) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -128,7 +134,7 @@
                     @foreach ($property as $p)
                     <div class="col-md-6 col-lg-4 filtr-item" data-category="{{ $p->category }}" data-title="">
 
-                        <a href="{{ route('properties.show', $p->id) }}">
+                        <a href="{{ route('properties.show', $p->name) }}">
                         <div class="card__image card__box-v1">
                             <div class="card__image-header h-250">
                                 <div class="ribbon text-capitalize">featured</div>

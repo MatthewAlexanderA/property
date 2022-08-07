@@ -122,14 +122,16 @@
             <div class="col-md-4">
                 <!-- BLOG  -->
                 <div class="card__image">
-                    <div class="card__image-header h-250">
-                        <img src="{{ asset('storage/' . $b->image) }}" alt="" class="img-fluid w100 img-transition">
-                        {{-- <div class="info"> event</div> --}}
-                    </div>
+                    <a href="{{ route('blogs.show', $b->title) }}">
+                        <div class="card__image-header h-250">
+                            <img src="{{ asset('storage/' . $b->image) }}" alt="" class="img-fluid w100 img-transition">
+                            {{-- <div class="info"> event</div> --}}
+                        </div>
+                    </a>
                     <div class="card__image-body">
                         <!-- <span class="badge badge-secondary p-1 text-capitalize mb-3">May 08, 2019 </span> -->
                         <h6 class="text-capitalize">
-                            <a href="/blog-single.html">{{ $b->title }} </a>
+                            <a href="{{ route('blogs.show', $b->title) }}">{{ $b->title }} </a>
                         </h6>
 
                     </div>
@@ -139,7 +141,7 @@
                         </ul>
                         <ul class="list-inline my-auto ml-auto">
                             <li class="list-inline-item ">
-                                <a href="{{ route('blog.show', $b->id) }}" class="btn btn-sm btn-primary "><small
+                                <a href="{{ route('blogs.show', $b->title) }}" class="btn btn-sm btn-primary "><small
                                         class="text-white ">read more <i
                                             class="fa fa-angle-right ml-1"></i></small></a>
                             </li>
