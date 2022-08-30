@@ -44,7 +44,6 @@ class ConfigController extends Controller
             'title' => 'required',
             'favicon' => 'file',
             'logo' => 'file',
-            'metadata' => 'required',
             'fb' => 'required',
             'twit' => 'required',
             'in' => 'required',
@@ -53,6 +52,12 @@ class ConfigController extends Controller
             'wa' => 'required',
             'address' => 'required',
             'phone' => 'required',
+            'meta_title' => 'required',
+            'meta_desc' => 'required',
+            'meta_keyword' => 'required',
+            'meta_search' => 'required',
+            'meta_auth' => 'required',
+            'meta_web' => 'required',
         ];
 
         $validated = $request->validate($rules);

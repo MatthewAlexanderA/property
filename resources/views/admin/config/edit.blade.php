@@ -90,15 +90,6 @@ Config
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Metadata</strong>
-                                <textarea name="metadata" id="contents" cols="30" rows="10">{{ $config[0]->metadata }}</textarea>
-                                <script>
-                                    CKEDITOR.replace('contents');
-                                </script>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
                                 <strong>Link Facebook</strong>
                                 <input type="text" name="fb" class="form-control" @error('fb') is-invalid @enderror placeholder="fb" value="{{$config[0]->fb}}">
                                 @error('fb')
@@ -183,6 +174,42 @@ Config
                                     {{ $message }}
                                 </div>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Title</strong><br>
+                                <textarea name="meta_title" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_title }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Description</strong><br>
+                                <textarea name="meta_desc" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_desc }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Keyword</strong><br>
+                                <textarea name="meta_keyword" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_keyword }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Search Engine</strong><br>
+                                <textarea name="meta_search" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_search }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Author</strong><br>
+                                <textarea name="meta_auth" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_auth }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Meta Website</strong><br>
+                                <textarea name="meta_web" id="contents" style="width: 100%" rows="5">{{ $config[0]->meta_web }}</textarea>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

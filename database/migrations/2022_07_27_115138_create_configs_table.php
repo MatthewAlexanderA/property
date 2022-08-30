@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('favicon');
             $table->string('logo');
-            $table->longText('metadata');
             $table->string('fb');
             $table->string('twit');
             $table->string('in');
@@ -27,6 +26,12 @@ return new class extends Migration
             $table->string('wa');
             $table->string('address');
             $table->string('phone');
+            $table->text('meta_title');
+            $table->text('meta_desc');
+            $table->text('meta_keyword');
+            $table->text('meta_search');
+            $table->text('meta_auth');
+            $table->text('meta_web');
             $table->timestamps();
         });
     }

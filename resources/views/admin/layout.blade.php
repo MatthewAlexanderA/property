@@ -147,6 +147,12 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/user" class="nav-link @yield('user')">
+              <i class="fa-solid fa-user"></i>
+              <p>User Management</p>
+            </a>
+          </li>
           
         </ul>
       </nav>
@@ -381,6 +387,37 @@
 
       $.ajax({
         url:"{{ route('category.deleteSelected') }}",
+        type:"DELETE",
+        data:{
+          _token:$("input[name=_token]").val(),
+          ids:allids
+        },
+        success:function(response){
+          $.each(allids,function(key,val){
+            $("#sid"+val).remove();
+          })
+        }
+      });
+    })
+  });
+</script>
+
+<script>
+  $(function(e){
+    $("#chkCheckAll").click(function(){
+      $(".checkBoxClass").prop('checked',$(this).prop('checked'));
+    });
+
+    $("#deleteAllSelectedUser").click(function(e){
+      e.preventDefault();
+      var allids = [];
+
+      $("input:checkbox[name=ids]:checked").each(function(){
+        allids.push($(this).val());
+      });
+
+      $.ajax({
+        url:"{{ route('user.deleteSelected') }}",
         type:"DELETE",
         data:{
           _token:$("input[name=_token]").val(),

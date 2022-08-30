@@ -16,6 +16,7 @@ use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitleController;
+use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutsController;
@@ -59,9 +60,11 @@ Route::resource('property', PropertyController::class)->middleware('auth');
 Route::resource('slider', SliderController::class)->middleware('auth');
 Route::resource('testimonial', TestimonialController::class)->middleware('auth');
 Route::resource('title', TitleController::class)->middleware('auth');
+Route::resource('user', UserController::class)->middleware('auth');
 
 Route::delete('/selected-slider', [SliderController::class, 'deleteCheckedSlider'])->name('slider.deleteSelected');
 Route::delete('/selected-property', [PropertyController::class, 'deleteCheckedProperty'])->name('property.deleteSelected');
 Route::delete('/selected-testimonial', [TestimonialController::class, 'deleteCheckedTestimonial'])->name('testimonial.deleteSelected');
 Route::delete('/selected-blog', [BlogController::class, 'deleteCheckedBlog'])->name('blog.deleteSelected');
 Route::delete('/selected-category', [CategoryController::class, 'deleteCheckedCategory'])->name('category.deleteSelected');
+Route::delete('/selected-user', [UserController::class, 'deleteCheckedUser'])->name('user.deleteSelected');

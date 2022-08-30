@@ -6,9 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Rethouse - Real Estate HTML Template">
-    <meta name="keywords" content="Real Estate, Property, Directory Listing, Marketing, Agency" />
-    <meta name="author" content="mardianto - retenvi.com">
+    <meta name="title" content="{{ $config[0]->meta_title }}">
+    <meta name="description" content="{{ $config[0]->meta_desc }}">
+    <meta name="keywords" content="{{ $config[0]->meta_keyword }}" />
+    <meta name="search engine" content="{{ $config[0]->meta_search }}" />
+    <meta name="author" content="{{ $config[0]->meta_auth }}">
     <title>{{ $config[0]->title }}</title>
 
     <!-- Facebook and Twitter integration -->
