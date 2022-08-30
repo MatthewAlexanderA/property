@@ -89,70 +89,151 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="/dashboard" class="nav-link @yield('dashboard')">
-                <i class="fa-solid fa-gauge-high"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/title" class="nav-link @yield('page')">
-              <i class="fa-solid fa-a"></i>
-              <p>Page Title</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="about" class="nav-link @yield('about')">
-                <i class="fa-solid fa-address-card"></i>
-              <p>Tentang Kami</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/slider" class="nav-link @yield('slider')">
-                <i class="fas fa-solid fa-sliders"></i>
-              <p>Sliders</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="/property" class="nav-link @yield('property')">
-                <i class="fa-solid fa-image"></i>
-              <p>Properties</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/testimonial" class="nav-link @yield('testimonial')">
-                <i class="fa-solid fa-comment"></i>
-              <p>Testimonials</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/blog" class="nav-link @yield('blog')">
-                <i class="fa-solid fa-file"></i>
-              <p>Blogs</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/category" class="nav-link @yield('category')">
-              <i class="fa-solid fa-quote-left"></i>
-              <p>Categories</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="config" class="nav-link @yield('config')">
-                <i class="fa-solid fa-gear"></i>
-              <p>
-                Configuration
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/user" class="nav-link @yield('user')">
-              <i class="fa-solid fa-user"></i>
-              <p>User Management</p>
-            </a>
-          </li>
+
+               @if (Auth::user()->role == 'operator')
+
+               <li class="nav-item">
+                <a href="/dashboard" class="nav-link @yield('dashboard')">
+                    <i class="fa-solid fa-gauge-high"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="/property" class="nav-link @yield('property')">
+                    <i class="fa-solid fa-image"></i>
+                  <p>Properties</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/blog" class="nav-link @yield('blog')">
+                    <i class="fa-solid fa-file"></i>
+                  <p>Blogs</p>
+                </a>
+              </li>
+               
+               @elseif (Auth::user()->role == 'admin')
+
+               <li class="nav-item">
+                <a href="/dashboard" class="nav-link @yield('dashboard')">
+                    <i class="fa-solid fa-gauge-high"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/title" class="nav-link @yield('page')">
+                  <i class="fa-solid fa-a"></i>
+                  <p>Page Title</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="about" class="nav-link @yield('about')">
+                    <i class="fa-solid fa-address-card"></i>
+                  <p>Tentang Kami</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/slider" class="nav-link @yield('slider')">
+                    <i class="fas fa-solid fa-sliders"></i>
+                  <p>Sliders</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/property" class="nav-link @yield('property')">
+                    <i class="fa-solid fa-image"></i>
+                  <p>Properties</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/testimonial" class="nav-link @yield('testimonial')">
+                    <i class="fa-solid fa-comment"></i>
+                  <p>Testimonials</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/blog" class="nav-link @yield('blog')">
+                    <i class="fa-solid fa-file"></i>
+                  <p>Blogs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/category" class="nav-link @yield('category')">
+                  <i class="fa-solid fa-quote-left"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+
+               @else
+
+               <li class="nav-item">
+                <a href="/dashboard" class="nav-link @yield('dashboard')">
+                    <i class="fa-solid fa-gauge-high"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/title" class="nav-link @yield('page')">
+                  <i class="fa-solid fa-a"></i>
+                  <p>Page Title</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="about" class="nav-link @yield('about')">
+                    <i class="fa-solid fa-address-card"></i>
+                  <p>Tentang Kami</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/slider" class="nav-link @yield('slider')">
+                    <i class="fas fa-solid fa-sliders"></i>
+                  <p>Sliders</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/property" class="nav-link @yield('property')">
+                    <i class="fa-solid fa-image"></i>
+                  <p>Properties</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/testimonial" class="nav-link @yield('testimonial')">
+                    <i class="fa-solid fa-comment"></i>
+                  <p>Testimonials</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/blog" class="nav-link @yield('blog')">
+                    <i class="fa-solid fa-file"></i>
+                  <p>Blogs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/category" class="nav-link @yield('category')">
+                  <i class="fa-solid fa-quote-left"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/user" class="nav-link @yield('user')">
+                  <i class="fa-solid fa-user"></i>
+                  <p>User Management</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="config" class="nav-link @yield('config')">
+                    <i class="fa-solid fa-gear"></i>
+                  <p>
+                    Configuration
+                  </p>
+                </a>
+              </li>
+
+               @endif
           
         </ul>
       </nav>

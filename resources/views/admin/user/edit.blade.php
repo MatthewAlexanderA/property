@@ -69,9 +69,8 @@ User Management
                             <div class="form-group">
                                 <strong>Role</strong>
                                 <select class="form-control" name="role">
-                                    <option value="operator">Operator</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="super admin">Super Admin</option>
+                                    <option @if ($user->role == 'operator') selected @endif value="operator">Operator</option>
+                                    <option @if ($user->role == 'admin') selected @endif value="admin">Admin</option>
                                 </select>
                                 @error('role')
                                 <div class="invalid-feedback">

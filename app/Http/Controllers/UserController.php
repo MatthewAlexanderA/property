@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->paginate(500);
+        $user = User::where('role', '!=', 'superadmin')->latest()->paginate(500);
 
         return view('admin.user.index', compact('user'))
             ->with('i', (request()->input('page', 1) - 1) * 500);

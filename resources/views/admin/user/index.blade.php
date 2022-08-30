@@ -172,7 +172,6 @@ User Management
                             <select class="form-control" name="role">
                                 <option value="operator">Operator</option>
                                 <option value="admin">Admin</option>
-                                <option value="super admin">Super Admin</option>
                             </select>
                             @error('name')
                             <div class="invalid-feedback">

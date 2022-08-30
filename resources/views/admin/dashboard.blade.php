@@ -61,6 +61,38 @@ Dashboard
 <h5 class="mb-2 mt-4">Data Information</h5>
 <div class="row">
 
+    @if (Auth::user()->role == 'operator')
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary" >
+            <div class="inner">
+                <h3>{{ $property }}</h3>
+
+                <p>Total Properties</p>
+            </div>
+            <div class="icon">
+                <i class="fa-solid fa-image"></i>
+            </div>
+            <div class="small-box-footer"> </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary" >
+            <div class="inner">
+                <h3>{{ $blog }}</h3>
+
+                <p>Total Blog</p>
+            </div>
+            <div class="icon">
+                <i class="fa-solid fa-file"></i>
+            </div>
+            <div class="small-box-footer"> </div>
+        </div>
+    </div>
+
+    @else
+
     <div class="col-lg-3 col-6">
         <div class="small-box bg-primary" >
             <div class="inner">
@@ -130,5 +162,7 @@ Dashboard
         <div class="small-box-footer"> </div>
     </div>
 </div>
+
+    @endif
 
 @endsection

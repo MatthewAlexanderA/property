@@ -51,16 +51,17 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authentication'])->name('authentication');
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::resource('about', AboutController::class)->middleware('auth');
+Route::resource('about', AboutController::class)->middleware('admin');
+Route::resource('category', CategoryController::class)->middleware('admin');
+Route::resource('slider', SliderController::class)->middleware('admin');
+Route::resource('testimonial', TestimonialController::class)->middleware('admin');
+Route::resource('title', TitleController::class)->middleware('admin');
 
 Route::resource('blog', BlogController::class)->middleware('auth');
-Route::resource('category', CategoryController::class)->middleware('auth');
-Route::resource('config', ConfigController::class)->middleware('auth');
 Route::resource('property', PropertyController::class)->middleware('auth');
-Route::resource('slider', SliderController::class)->middleware('auth');
-Route::resource('testimonial', TestimonialController::class)->middleware('auth');
-Route::resource('title', TitleController::class)->middleware('auth');
-Route::resource('user', UserController::class)->middleware('auth');
+
+Route::resource('config', ConfigController::class)->middleware('superadmin');
+Route::resource('user', UserController::class)->middleware('superadmin');
 
 Route::delete('/selected-slider', [SliderController::class, 'deleteCheckedSlider'])->name('slider.deleteSelected');
 Route::delete('/selected-property', [PropertyController::class, 'deleteCheckedProperty'])->name('property.deleteSelected');

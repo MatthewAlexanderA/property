@@ -22,9 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         \App\Models\User::create([
-            'username' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin'),
+            'username' => 'superadmin',
+            'email' => 'superadmin@gmail.com',
+            'password' => bcrypt('superadmin'),
+            'role' => 'superadmin',
         ]);
     }
 }
